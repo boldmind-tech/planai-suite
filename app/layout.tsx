@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { PlanaiLandingLayout } from './planai-landingLayout'
 import { ErrorBoundary, CookieConsent } from "@boldmind-tech/ui";
-import "@boldmind-tech/ui/dist/index.css";
 import './globals.css'
 
 const inter = Inter({
@@ -20,129 +19,62 @@ const getCanonicalUrl = () => {
 const canonicalUrl = getCanonicalUrl();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(canonicalUrl),
+  metadataBase: new URL('https://planai.boldmind.ng'),
   title: {
-    default: 'PlanAI Suite — Complete AI Business Automation for Nigerian Entrepreneurs',
-    template: "%s | PlanAI Suite",
+    default: 'PlanAI by BoldMind',
+    template: `%s | PlanAI by BoldMind`,
   },
-  description:
-    'Complete AI business stack for Nigerian entrepreneurs. AI Receptionist, Digital Storefront, Marketing Automation, Financial Planning, Investor Readiness, and Branding — everything you need to launch and scale.',
-  keywords: [
-    "AI business solutions Nigeria",
-    "PlanAI Suite",
-    "AI receptionist Nigeria",
-    "business automation Nigeria",
-    "marketing automation Nigeria",
-    "digital storefront Nigeria",
-    "financial planning Nigeria",
-    "investor readiness Nigeria",
-    "Nigerian entrepreneur tools",
-    "AI tools for business Nigeria",
-    "branding Nigeria",
-    "BoldMind AI",
-    "business planning Nigeria",
-    "credibility hub Nigeria",
-    "analytics dashboard Nigeria",
-    "African AI business tools",
-    "startup tools Nigeria",
-    "small business AI Nigeria",
-  ],
-  authors: [
-    { name: "BoldMind Technology Solution Enterprise", url: "https://boldmind.ng" },
-    { name: "Charles Uche Chijuka" },
-  ],
-  creator: "BoldMind Technology Solution Enterprise",
-  publisher: "BoldMind Technology Solution Enterprise",
-  formatDetection: { email: false, telephone: false },
-  category: "technology",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
-    },
-  },
-  alternates: {
-    canonical: canonicalUrl,
-    languages: { "en-NG": canonicalUrl },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_NG",
-    url: canonicalUrl,
-    title: "PlanAI Suite — Complete AI Business Stack for Nigerian Entrepreneurs",
-    siteName: "PlanAI Suite",
-    description:
-      "AI Receptionist, Digital Storefront, Marketing Automation, Financial Planning, and more — the complete AI business toolkit for Nigerian entrepreneurs.",
-    images: [
-      {
-        url: `${canonicalUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "PlanAI Suite — AI Business Automation Nigeria",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@boldmindtech",
-    creator: "@boldmindtech",
-    title: "PlanAI Suite — AI Business Automation for Nigerian Entrepreneurs",
-    description:
-      "Complete AI business stack: AI Receptionist, Digital Storefront, Marketing Automation, and Financial Planning.",
-    images: [`${canonicalUrl}/og-image.png`],
-  },
-  verification: {
-    google: process.env['NEXT_PUBLIC_GOOGLE_SITE_VERIFY'],
-    other: {
-      me: [
-        "https://facebook.com/BoldMindTech",
-        "https://instagram.com/boldmindtech",
-        "https://x.com/villagecircleng",
-        "https://linkedin.com/company/boldmind-technology-solution-enterprise",
-        "https://github.com/boldmind-tech",
-      ],
-    },
-  },
+  description: 'AI business tools for Nigerian entrepreneurs',
+  applicationName: 'PlanAI by BoldMind',
+  keywords: ['Nigeria', 'planai', 'BoldMind', 'Nigerian entrepreneur'],
+  authors: [{ name: 'Boldmind Technology Solution Enterprise', url: 'https://boldmind.ng' }],
+  creator: 'BoldMind Technology',
+  publisher: 'BoldMind Technology',
+  
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
+      { url: '/favicon.ico' },
+      { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icons/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
     ],
-    shortcut: [{ url: "/favicon.ico", sizes: "any" }],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-      { url: "/apple-icon-152x152.png", sizes: "152x152", type: "image/png" },
-      { url: "/apple-icon-167x167.png", sizes: "167x167", type: "image/png" },
+      { url: '/apple-touch-icon.png' },
+      { url: '/icons/apple/apple-touch-icon-152x152.png', sizes: '152x152' },
+      { url: '/icons/apple/apple-touch-icon-167x167.png', sizes: '167x167' },
+      { url: '/icons/apple/apple-touch-icon-180x180.png', sizes: '180x180' },
     ],
-    other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#00143C" }],
+    other: [
+      { rel: 'mask-icon', url: '/icons/favicon-96x96.png' },
+    ],
   },
-  manifest: "/manifest.webmanifest",
-  appleWebApp: {
-    title: "PlanAI Suite",
-    statusBarStyle: "black-translucent",
-    startupImage: [
+
+  openGraph: {
+    type: 'website',
+    url: 'https://planai.boldmind.ng',
+    siteName: 'PlanAI by BoldMind',
+    title: 'PlanAI by BoldMind',
+    description: 'AI business tools for Nigerian entrepreneurs',
+    locale: 'en_NG',
+    images: [
       {
-        url: "/apple-startup-640x1136.png",
-        media:
-          "(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)",
+        url: '/social/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'PlanAI by BoldMind',
       },
     ],
   },
-  other: {
-    "application-name": "PlanAI Suite",
-    "msapplication-TileColor": "#00143C",
-    "msapplication-config": "/browserconfig.xml",
-    "apple-mobile-web-app-title": "PlanAI Suite",
+
+  twitter: {
+    card: 'summary_large_image',
+    site: '@planaiNG',
+    creator: '@boldmindindng',
+    title: 'PlanAI by BoldMind',
+    description: 'AI business tools for Nigerian entrepreneurs',
+    images: ['/social/twitter-card.jpg'],
   },
+
 };
 
 export const viewport: Viewport = {
@@ -337,6 +269,59 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="//cdn.boldmind.ng" />
         <link rel="dns-prefetch" href="//api.boldmind.ng" />
         <meta name="mobile-web-app-capable" content="yes" />
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta name="application-name" content="PlanAI by BoldMind" />
+        <meta name="description" content="AI business tools for Nigerian entrepreneurs" />
+        <meta name="theme-color" content="#5B21B6" />
+        <meta name="msapplication-TileColor" content="#5B21B6" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
+
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple/apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple/apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/icons/apple/apple-touch-icon-167x167.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple/apple-touch-icon-180x180.png" />
+
+        <link rel="manifest" href="/manifest.webmanifest" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://planai.boldmind.ng" />
+        <meta property="og:site_name" content="PlanAI by BoldMind" />
+        <meta property="og:title" content="PlanAI by BoldMind" />
+        <meta property="og:description" content="AI business tools for Nigerian entrepreneurs" />
+        <meta property="og:image" content="https://planai.boldmind.ng/social/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="PlanAI by BoldMind — AI business tools for Nigerian entrepreneurs" />
+        <meta property="og:locale" content="en_NG" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@planaiNG" />
+        <meta name="twitter:creator" content="@BoldMindNG" />
+        <meta name="twitter:title" content="PlanAI by BoldMind" />
+        <meta name="twitter:description" content="AI business tools for Nigerian entrepreneurs" />
+        <meta name="twitter:image" content="https://planai.boldmind.ng/social/twitter-card.jpg" />
+
+
+        <meta name="msapplication-square70x70logo" content="/icons/windows/mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="/icons/windows/mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="/icons/windows/mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="/icons/windows/mstile-310x310.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="geo.region" content="NG-LA" />

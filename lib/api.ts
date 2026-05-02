@@ -1,5 +1,5 @@
 // APPS/WEB_APPS/planai/lib/api.ts
-import { boldMindAPI, type BusinessPlan, type FinancialForecast, type BrandingJob } from '@boldmind-tech/api-client';
+import { boldMindAPI, type BusinessPlan, type FinancialForecast, type BrandingJob, type FitnessProfile, type WorkoutPlan, type MealLog, type BodyMetric, type FitnessDashboard } from '@boldmind-tech/api-client';
 
 export const planaiAPI = {
     /**
@@ -137,6 +137,138 @@ export const planaiAPI = {
     hr: (data: unknown) => boldMindAPI.planai.hr(data),
     legal: (data: unknown) => boldMindAPI.planai.legal(data),
     operations: (data: unknown) => boldMindAPI.planai.operations(data),
+
+    /**
+     * Marketing Campaigns & AI Copy
+     */
+    marketing: {
+        /** POST /planai/marketing/campaign/email */
+        createEmailCampaign: (data: { subject: string; body: string; audienceIds?: string[] }) =>
+            boldMindAPI.planai.marketing.createEmailCampaign(data),
+
+        /** POST /planai/marketing/campaign/:id/send */
+        sendCampaign: (id: string) => boldMindAPI.planai.marketing.sendCampaign(id),
+
+        /** POST /planai/marketing/generate/subject-lines */
+        generateSubjectLines: (data: { topic: string; tone?: string; count?: number }) =>
+            boldMindAPI.planai.marketing.generateSubjectLines(data),
+
+        /** POST /planai/marketing/generate/email-copy */
+        generateEmailCopy: (data: { purpose: string; tone?: string; productName?: string }) =>
+            boldMindAPI.planai.marketing.generateEmailCopy(data),
+
+        /** POST /planai/marketing/whatsapp/broadcast */
+        whatsappBroadcast: (data: { message: string; phones: string[] }) =>
+            boldMindAPI.planai.marketing.whatsappBroadcast(data),
+
+        /** GET /planai/marketing/analytics/:campaignId */
+        getCampaignAnalytics: (campaignId: string) =>
+            boldMindAPI.planai.marketing.campaignAnalytics(campaignId),
+    },
+
+    /**
+     * Email Scraper & Lead Generation
+     */
+    emailScraper: {
+        /** POST /planai/emailscraper/search */
+        search: (data: { domain?: string; company?: string; role?: string; limit?: number }) =>
+            boldMindAPI.planai.emailScraper.search(data),
+
+        /** POST /planai/emailscraper/verify */
+        verify: (email: string) => boldMindAPI.planai.emailScraper.verify(email),
+
+        /** POST /planai/emailscraper/bulk-verify */
+        bulkVerify: (emails: string[]) => boldMindAPI.planai.emailScraper.bulkVerify(emails),
+
+        /** GET /planai/emailscraper/leads */
+        getLeads: (params?: { page?: number; limit?: number; listId?: string }) =>
+            boldMindAPI.planai.emailScraper.leads(params),
+
+        /** GET /planai/emailscraper/leads/export (returns URL) */
+        getExportUrl: (params?: { listId?: string; format?: 'csv' | 'json' }) =>
+            boldMindAPI.planai.emailScraper.exportLeads(params),
+
+        /** POST /planai/emailscraper/lists */
+        createList: (name: string) => boldMindAPI.planai.emailScraper.createList({ name }),
+
+        /** GET /planai/emailscraper/lists */
+        getLists: () => boldMindAPI.planai.emailScraper.lists(),
+
+        /** GET /planai/emailscraper/jobs */
+        getJobs: () => boldMindAPI.planai.emailScraper.jobs(),
+    },
+
+    /**
+     * PlanAI Analytics
+     */
+    analytics: {
+        /** GET /planai/analytics/overview */
+        overview: () => boldMindAPI.planai.analytics.overview(),
+
+        /** POST /planai/analytics/report */
+        generateReport: (data: unknown) => boldMindAPI.planai.analytics.report(data),
+
+        /** GET /planai/analytics/revenue */
+        getRevenue: () => boldMindAPI.planai.analytics.revenue(),
+
+        /** GET /planai/analytics/growth-insights */
+        getGrowthInsights: () => boldMindAPI.planai.analytics.growthInsights(),
+    },
 };
 
 export default planaiAPI;
+
+// ─── Fitness API ──────────────────────────────────────────────────────────────
+
+export const fitnessAPI = {
+    /** GET /planai/fitness/profile */
+    getProfile: () => boldMindAPI.fitness.getProfile(),
+
+    /** PATCH /planai/fitness/profile */
+    updateProfile: (data: Partial<FitnessProfile>) => boldMindAPI.fitness.updateProfile(data),
+
+    plans: {
+        /** POST /planai/fitness/plans/generate */
+        generate: (data: { goal: string; level?: string; daysPerWeek?: number }) =>
+            boldMindAPI.fitness.plans.generate(data),
+
+        /** GET /planai/fitness/plans */
+        list: () => boldMindAPI.fitness.plans.list(),
+
+        /** GET /planai/fitness/plans/:id */
+        get: (id: string) => boldMindAPI.fitness.plans.get(id),
+    },
+
+    workouts: {
+        /** POST /planai/fitness/workouts */
+        log: (data: { planId?: string; exercises: unknown[]; duration?: number }) =>
+            boldMindAPI.fitness.workouts.log(data),
+
+        /** GET /planai/fitness/workouts */
+        list: () => boldMindAPI.fitness.workouts.list(),
+    },
+
+    meals: {
+        /** POST /planai/fitness/meals */
+        log: (data: { meal: string; calories?: number; mealTime?: string }) =>
+            boldMindAPI.fitness.meals.log(data),
+
+        /** GET /planai/fitness/meals */
+        list: () => boldMindAPI.fitness.meals.list(),
+
+        /** POST /planai/fitness/meals/analyze */
+        analyze: (data: { meal: string; quantity?: string }) =>
+            boldMindAPI.fitness.meals.analyze(data),
+    },
+
+    metrics: {
+        /** POST /planai/fitness/metrics */
+        log: (data: Partial<BodyMetric>) => boldMindAPI.fitness.metrics.log(data),
+
+        /** GET /planai/fitness/metrics */
+        list: () => boldMindAPI.fitness.metrics.list(),
+    },
+
+    /** GET /planai/fitness/dashboard */
+    dashboard: () => boldMindAPI.fitness.dashboard(),
+};

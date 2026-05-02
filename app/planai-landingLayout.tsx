@@ -4,7 +4,7 @@ import { ThemeProvider, FontProvider } from '@boldmind-tech/ui';
 import type { ProductThemeType } from '@boldmind-tech/ui';
 
 const PLANAI_THEME: ProductThemeType = {
-  slug: 'planai-suite',
+  slug: 'planai',
   name: 'PlanAI Suite',
   description: 'AI business automation for Nigerian entrepreneurs',
   icon: '🤖',
@@ -21,7 +21,7 @@ export function PlanaiLandingLayout({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider
       defaultTheme="light"
-      forceProductSlug="planai-suite"
+      forceProductSlug="planai"
       defaultProduct={PLANAI_THEME}
     >
       <FontProvider defaultMode="standard">

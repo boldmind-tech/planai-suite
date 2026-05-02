@@ -12,7 +12,7 @@ export default function PlanAIPricingPage() {
   return (
     <main className="flex-1">
       <PricingContent
-        productSlug="planai-suite"
+        productSlug="planai"
         heading="Business AI Tools, Nigerian Prices"
         subheading="Every tool your business needs — from business plans to AI receptionists. Priced for the Nigerian market."
       />
