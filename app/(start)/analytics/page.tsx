@@ -1,5 +1,6 @@
 'use client';
 
+import { SUITE_NAV_LINKS } from '@/lib/nav-links';
 import { SuperNavbar, SuperFooter } from '@boldmind-tech/ui';
 import { motion } from 'framer-motion';
 import {
@@ -28,7 +29,7 @@ export default function AnalyticsLandingPage() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white font-sans selection:bg-purple-500/30">
-      <SuperNavbar logoSrc="/logo.png" />
+      <SuperNavbar logoSrc="/logo.png" links={SUITE_NAV_LINKS} />
 
       <main>
         {/* Hero Section */}

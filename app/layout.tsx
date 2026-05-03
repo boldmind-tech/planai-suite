@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   applicationName: 'PlanAI by BoldMind',
   keywords: ['Nigeria', 'planai', 'BoldMind', 'Nigerian entrepreneur'],
   authors: [{ name: 'Boldmind Technology Solution Enterprise', url: 'https://boldmind.ng' }],
-  creator: 'BoldMind Technology',
-  publisher: 'BoldMind Technology',
+  creator: 'BoldMind Technology Solution Enterprise',
+  publisher: 'BoldMind Technology Solution Enterprise',
   
   icons: {
     icon: [
@@ -104,7 +104,7 @@ const organizationSchema = {
       "@type": "Person",
       name: "Charles Uche Chijuka",
       sameAs: [
-        "https://facebook.com/charleschijukaui",
+        "https://facebook.com/charleschijukau",
         "https://linkedin.com/in/charliedotcom",
         "https://x.com/CharlesChijukaU",
         "https://instagram.com/charleschijuka",

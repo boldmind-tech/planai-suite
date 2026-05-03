@@ -210,7 +210,7 @@ export default function InvestorReadinessPage() {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex flex-col font-sans">
-      <SuperNavbar logoSrc="/logo.png" links={TOOL_NAV_LINKS} />
+      <SuperNavbar logoSrc="/logo.png" links={TOOL_NAV_LINKS}  />
 
       {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-[#1E293B]">

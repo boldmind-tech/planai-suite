@@ -121,7 +121,7 @@ export default function StartPage() {
                 </div>
 
                 <Link
-                  href={`${p.href}?utm_source=planai_landing&utm_medium=suite_card`}
+                  href={`${p.href}?utm_source=planai_start&utm_medium=suite_card`}
                   className={`flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-bold transition-all border ${
                     p.tag === 'LIVE' ? p.accentBtn : `bg-transparent ${p.accentBtnOutline}`
                   }`}
@@ -266,7 +266,8 @@ export default function StartPage() {
         </div>
       </section>
       
-      <SuperFooter
+      <SuperFooter              
+       logoSrc='/logo.png'
         sections={[
           {
             title: 'Tools',

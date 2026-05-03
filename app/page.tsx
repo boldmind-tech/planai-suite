@@ -437,6 +437,7 @@ export default function PlanAILanding() {
       </section>
 
       <SuperFooter
+         logoSrc='/logo.png'
         sections={[
           {
             title: 'Tools',

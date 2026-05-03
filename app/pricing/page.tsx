@@ -262,7 +262,7 @@ export default function PricingPage() {
 
             <p className="text-center text-sm text-slate-400 mt-8">
               Want to pay per tool instead?{' '}
-              <Link href="/#suite" className="font-bold underline" style={{ color: '#5B21B6' }}>
+              <Link href="/start" className="font-bold underline" style={{ color: '#5B21B6' }}>
                 See individual tool pricing →
               </Link>
             </p>
@@ -296,7 +296,7 @@ export default function PricingPage() {
         </section>
       </main>
 
-      <SuperFooter product="planai" />
+      <SuperFooter product="planai"           logoSrc='/logo.png'/>
     </div>
   );
 }

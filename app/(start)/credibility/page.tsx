@@ -14,6 +14,7 @@ import {
   Star,
   CheckCircle,
 } from "lucide-react";
+import { SUITE_NAV_LINKS } from "@/lib/nav-links";
 
 export default function Home() {
 
@@ -43,6 +44,7 @@ export default function Home() {
       <SuperNavbar
         logoSrc="/logo.png"
         cta={{ label: "Claim Your Hub", href: "/register" }}
+        links={SUITE_NAV_LINKS}
         sticky={true}
       />
 

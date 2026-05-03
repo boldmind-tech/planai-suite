@@ -6,7 +6,7 @@ import {
   Palette, Grid, Layout, Image as ImageIcon, ArrowRight, Wand2, Download
 } from 'lucide-react';
 import Link from 'next/link';
-import { TOOL_NAV_LINKS } from '@/lib/nav-links';
+import { SUITE_NAV_LINKS } from '@/lib/nav-links';
 
 export default function BrandingLandingPage() {
   const features = [
@@ -36,7 +36,7 @@ export default function BrandingLandingPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-pink-500/30">
-      <SuperNavbar logoSrc="/logo.png" links={TOOL_NAV_LINKS} />
+      <SuperNavbar logoSrc="/logo.png" links={SUITE_NAV_LINKS} />
 
       <main>
         {/* Hero Section */}
