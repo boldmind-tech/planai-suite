@@ -2,7 +2,7 @@
 
 import { AuthProvider } from '@boldmind-tech/auth';
 import { Toaster } from 'sonner';
-import { ThemeProvider } from '@boldmind/ui';
+import { ThemeProvider } from '@boldmind-tech/ui';
 
 export function Providers({ children, defaultProductTheme }: {
   children: React.ReactNode;

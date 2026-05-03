@@ -6,6 +6,7 @@ import {
   Mail, Users, Zap, BarChart, ArrowRight, MessageSquare, Repeat
 } from 'lucide-react';
 import Link from 'next/link';
+import { TOOL_NAV_LINKS } from '@/lib/nav-links';
 
 export default function MarketingAutomationPage() {
   return (

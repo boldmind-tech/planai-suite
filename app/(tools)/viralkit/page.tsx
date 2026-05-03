@@ -1,12 +1,14 @@
 'use client';
 
-import { SuperFooter } from '@boldmind-tech/ui';
+import { SuperNavbar, SuperFooter } from '@boldmind-tech/ui';
 import { motion } from 'framer-motion';
 import {
   Calendar, Sparkles, Share2, Clock, TrendingUp, Instagram,
   Twitter, Youtube, ArrowRight, CheckCircle2, Zap
 } from 'lucide-react';
 import Link from 'next/link';
+import { TOOL_NAV_LINKS } from '@/lib/nav-links';
+
 
 const platforms = [
   { name: 'Instagram', color: 'bg-gradient-to-br from-pink-500 to-orange-400', icon: <Instagram className="w-5 h-5 text-white" /> },
@@ -80,7 +82,7 @@ const pricing = [
 export default function ViralKitPage() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-violet-500/30">
-
+<SuperNavbar logoSrc="/logo.png" links={TOOL_NAV_LINKS} />
       <main>
         {/* HERO */}
         <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-white">

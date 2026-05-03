@@ -1,4 +1,3 @@
-// APPS/WEB_APPS/receptionist/lib/api.ts
 import { boldMindAPI, type ReceptionistConfig, type Conversation, type KnowledgeBase } from '@boldmind-tech/api-client';
 
 /**

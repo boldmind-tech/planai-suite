@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'AI business tools for Nigerian entrepreneurs',
     start_url: '/',
     display: 'standalone',
-    background_color: '#5B21B6',
+    background_color: '#FAFAFA',
     theme_color: '#5B21B6',
     orientation: 'portrait-primary',
     icons: [

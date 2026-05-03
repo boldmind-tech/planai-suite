@@ -6,11 +6,13 @@ import {
   TrendingUp, CircleDollarSign, LineChart, PieChart, ArrowRight, ShieldCheck, Calculator
 } from 'lucide-react';
 import Link from 'next/link';
+import { TOOL_NAV_LINKS } from '@/lib/nav-links';
+
 
 export default function FinanceLandingPage() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-emerald-500/30">
-
+      <SuperNavbar logoSrc="/logo.png" links={TOOL_NAV_LINKS} />
       <main>
         {/* Hero Section */}
         <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-white">

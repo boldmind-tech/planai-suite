@@ -6,11 +6,12 @@ import {
   FileText, TrendingUp, Target, Rocket, ArrowRight, Check
 } from 'lucide-react';
 import Link from 'next/link';
+import { TOOL_NAV_LINKS } from '@/lib/nav-links';
 
 export default function BusinessPlanningPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-indigo-500/30">
-      <SuperNavbar theme="light" logoSrc="/logo.png" />
+      <SuperNavbar theme="light" logoSrc="/logo.png" links={TOOL_NAV_LINKS} />
 
       <main>
         {/* Hero Section */}

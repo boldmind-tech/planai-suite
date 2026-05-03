@@ -1,4 +1,3 @@
-// APPS/WEB_APPS/storefronts/lib/api.ts
 import { boldMindAPI, type Storefront, type StoreProduct, type StoreOrder } from '@boldmind-tech/api-client';
 
 /**

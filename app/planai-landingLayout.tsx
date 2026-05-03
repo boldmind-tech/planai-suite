@@ -5,14 +5,14 @@ import type { ProductThemeType } from '@boldmind-tech/ui';
 
 const PLANAI_THEME: ProductThemeType = {
   slug: 'planai',
-  name: 'PlanAI Suite',
+  name: 'PlanAI By BoldMind',
   description: 'AI business automation for Nigerian entrepreneurs',
   icon: '🤖',
   status: 'LIVE',
   colors: {
-    primary:    '#00143C',   // deep navy — enterprise/trust
-    secondary:  '#0066FF',   // electric blue accent
-    accent:     '#00A3FF',   // lighter blue for hover states
+    primary:    '#5B21B6',   
+    secondary:  '#059669',   
+    accent:     '#8B5CF6',  
     background: '#FAFAFA',
   },
 };
