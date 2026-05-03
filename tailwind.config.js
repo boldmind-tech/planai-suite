@@ -3,6 +3,7 @@ const config = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@boldmind-tech/ui/dist/index.mjs',
   ],
   theme: {
     extend: {
