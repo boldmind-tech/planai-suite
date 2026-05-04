@@ -1,12 +1,11 @@
-// PlanAI Suite — Service Worker
-// Provides offline fallback and caches static assets.
+
 
 const CACHE_NAME = 'planai-suite-v1';
 const OFFLINE_URL = '/';
 
 const PRECACHE_ASSETS = [
   '/',
-  '/manifest.webmanifest',
+  '/site.webmanifest',
   '/icon-192x192.png',
   '/icon-512x512.png',
 ];

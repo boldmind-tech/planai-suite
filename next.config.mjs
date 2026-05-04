@@ -1,15 +1,6 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  transpilePackages: [
-    '@boldmind-tech/ui',
-    '@boldmind-tech/auth',
-    '@boldmind-tech/utils',
-    '@boldmind-tech/api-client',
- 
-  ],
-
-  output: 'standalone',
 
   images: {
     remotePatterns: [
@@ -23,14 +14,7 @@ const nextConfig = {
     ],
   },
 
-  experimental: {
-    externalDir: true,
-  },
-
-  webpack: (config) => {
-    config.resolve.symlinks = true;
-    return config;
-  },
+ 
 };
 
 export default nextConfig;

@@ -22,7 +22,7 @@ const TOOLS = [
   { href: '/dashboard/settings', emoji: '⚡', label: 'Settings' },
 ];
  
-const API = process.env['NEXT_PUBLIC_API_URL']?.replace(/\/$/, '') ?? 'http://localhost:4000';
+const API = process.env['NEXT_PUBLIC_API_URL']?.replace(/\/$/, '') ?? 'http://localhost:4000/api/v1';
  
 async function getRecentJobs() {
   try {
