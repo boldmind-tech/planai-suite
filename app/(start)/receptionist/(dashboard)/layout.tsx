@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode, useState, useEffect } from 'react';
-import { useAuthStore } from '@boldmind-tech/auth';
+import { useAuthStore } from '@boldmindng/auth';
 import { useRouter } from 'next/navigation';
 import {
   LayoutDashboard,

@@ -1,4 +1,4 @@
-import { boldMindAPI, type Storefront, type StoreProduct, type StoreOrder } from '@boldmind-tech/api-client';
+import { boldMindAPI, type Storefront, type StoreProduct, type StoreOrder } from '@boldmindng/api-client';
 
 /**
  * Storefronts API Client

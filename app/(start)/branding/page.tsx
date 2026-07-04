@@ -1,6 +1,6 @@
 'use client';
 
-import { SuperNavbar, SuperFooter } from '@boldmind-tech/ui';
+import { SuperNavbar, SuperFooter } from '@boldmindng/ui';
 import { motion } from 'framer-motion';
 import {
   Palette, Grid, Layout, Image as ImageIcon, ArrowRight, Wand2, Download

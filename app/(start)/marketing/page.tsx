@@ -1,6 +1,6 @@
 'use client';
 
-import { SuperNavbar, SuperFooter } from '@boldmind-tech/ui';
+import { SuperNavbar, SuperFooter } from '@boldmindng/ui';
 import { motion } from 'framer-motion';
 import {
   Mail, Users, Zap, BarChart, ArrowRight, MessageSquare, Repeat

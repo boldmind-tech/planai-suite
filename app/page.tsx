@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { SuperNavbar, SuperFooter } from '@boldmind-tech/ui';
+import { SuperNavbar, SuperFooter } from '@boldmindng/ui';
 import Link from 'next/link';
 import {
   ArrowRight, CheckCircle2, Star, MessageSquare

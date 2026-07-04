@@ -1,6 +1,6 @@
 
 
-const CACHE_NAME = 'planai-suite-v1';
+const CACHE_NAME = 'planai-suite-v2';
 const OFFLINE_URL = '/';
 
 const PRECACHE_ASSETS = [

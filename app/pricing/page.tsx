@@ -1,6 +1,6 @@
 'use client';
 
-import { SuperNavbar, SuperFooter } from '@boldmind-tech/ui';
+import { SuperNavbar, SuperFooter } from '@boldmindng/ui';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight, Zap } from 'lucide-react';

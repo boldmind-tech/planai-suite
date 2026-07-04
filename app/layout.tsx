@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { PlanaiLandingLayout } from './planai-landingLayout'
-import { ErrorBoundary, CookieConsent } from "@boldmind-tech/ui";
+import { ErrorBoundary, CookieConsent } from "@boldmindng/ui";
 import './globals.css'
 
 const inter = Inter({
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
   },
   description: 'AI business tools for Nigerian entrepreneurs',
   applicationName: 'PlanAI by BoldMind',
-  keywords: ['Nigeria', 'planai', 'BoldMind', 'Nigerian entrepreneur'],
+  keywords: ['Nigeria', 'planai', 'Boldmind', 'Nigerian entrepreneur'],
   authors: [{ name: 'Boldmind Technology Solution Enterprise', url: 'https://boldmind.ng' }],
-  creator: 'BoldMind Technology Solution Enterprise',
-  publisher: 'BoldMind Technology Solution Enterprise',
+  creator: 'Boldmind Technology Solution Enterprise',
+  publisher: 'Boldmind Technology Solution Enterprise',
   
   icons: {
     icon: [
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    site: '@planaiNG',
+    site: '@planaibyboldmin',
     creator: '@boldmindindng',
-    title: 'PlanAI by BoldMind',
+    title: 'PlanAI by BoldmindNG',
     description: 'AI business tools for Nigerian entrepreneurs',
     images: ['/social/twitter-card.jpg'],
   },
@@ -94,7 +94,7 @@ export const viewport: Viewport = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "BoldMind Technology Solution Enterprise",
+  name: "Boldmind Technology Solution Enterprise",
   url: canonicalUrl,
   logo: `${canonicalUrl}/logo.png`,
   description: "Complete AI business stack for Nigerian entrepreneurs",
@@ -104,10 +104,8 @@ const organizationSchema = {
       "@type": "Person",
       name: "Charles Uche Chijuka",
       sameAs: [
-        "https://facebook.com/charleschijukau",
-        "https://linkedin.com/in/charliedotcom",
-        "https://x.com/CharlesChijukaU",
-        "https://instagram.com/charleschijuka",
+        "https://linkedin.com/in/charleschijukau",
+        "https://x.com/charleschijukau",
       ],
     },
   ],
@@ -127,12 +125,12 @@ const organizationSchema = {
   },
   sameAs: [
     "https://x.com/villagecircleng",
-    "https://facebook.com/planaiAI",
-    "https://facebook.com/boldmindng",
-    "https://linkedin.com/company/boldmind-technology-solution-enterprise",
-    "https://github.com/boldmind-tech",
+    "https://facebook.com/planaibyboldmind",
+    "https://facebook.com/boldmindng1",
+    "https://linkedin.com/company/boldmindng",
+    "https://github.com/boldmindng",
     "https://tiktok.com/@villagecircle",
-    "https://youtube.com/@BoldMindTech",
+    "https://youtube.com/@boldmindng",
   ],
   knowsAbout: [
     "Artificial Intelligence",
@@ -267,7 +265,7 @@ const productEcosystemSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "PlanAI Suite",
+  name: "PlanAI by BoldmindNg",
   url: canonicalUrl,
   inLanguage: "en-NG",
   potentialAction: {
@@ -294,7 +292,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta name="application-name" content="PlanAI by BoldMind" />
+        <meta name="application-name" content="PlanAI by BoldmindNG" />
         <meta name="description" content="AI business tools for Nigerian entrepreneurs" />
         <meta name="theme-color" content="#5B21B6" />
         <meta name="msapplication-TileColor" content="#5B21B6" />
@@ -321,19 +319,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://planai.boldmind.ng" />
-        <meta property="og:site_name" content="PlanAI by BoldMind" />
-        <meta property="og:title" content="PlanAI by BoldMind" />
+        <meta property="og:site_name" content="PlanAI by BoldmindNG" />
+        <meta property="og:title" content="PlanAI by Boldmind" />
         <meta property="og:description" content="AI business tools for Nigerian entrepreneurs" />
         <meta property="og:image" content="https://planai.boldmind.ng/social/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="PlanAI by BoldMind — AI business tools for Nigerian entrepreneurs" />
+        <meta property="og:image:alt" content="PlanAI by BoldmindNG — AI business tools for Nigerian entrepreneurs" />
         <meta property="og:locale" content="en_NG" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@planaiNG" />
-        <meta name="twitter:creator" content="@BoldMindNG" />
-        <meta name="twitter:title" content="PlanAI by BoldMind" />
+        <meta name="twitter:site" content="@planaibyboldmin" />
+        <meta name="twitter:creator" content="@boldmindng" />
+        <meta name="twitter:title" content="PlanAI by BoldmindNG" />
         <meta name="twitter:description" content="AI business tools for Nigerian entrepreneurs" />
         <meta name="twitter:image" content="https://planai.boldmind.ng/social/twitter-card.jpg" />
 

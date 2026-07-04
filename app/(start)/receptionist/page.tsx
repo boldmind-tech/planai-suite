@@ -14,7 +14,7 @@ import {
   CardFooter,
   ParticleBackground,
   TypewriterEffect,
-} from "@boldmind-tech/ui";
+} from "@boldmindng/ui";
 import {
   MessageSquare,
   Calendar,

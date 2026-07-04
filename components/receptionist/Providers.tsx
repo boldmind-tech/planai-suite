@@ -1,8 +1,8 @@
 ﻿'use client';
 
-import { AuthProvider } from '@boldmind-tech/auth';
+import { AuthProvider } from '@boldmindng/auth';
 import { Toaster } from 'sonner';
-import { ThemeProvider } from '@boldmind-tech/ui';
+import { ThemeProvider } from '@boldmindng/ui';
 
 export function Providers({ children, defaultProductTheme }: {
   children: React.ReactNode;

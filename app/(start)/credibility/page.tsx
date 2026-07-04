@@ -8,7 +8,7 @@ import {
   Card,
   CardContent,
 
-} from "@boldmind-tech/ui";
+} from "@boldmindng/ui";
 import {
   ShieldCheck,
   Star,

@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'PlanAI by BoldMind',
+    name: 'PlanAI by BoldmindNG',
     short_name: 'PLANAI',
     description: 'AI business tools for Nigerian entrepreneurs',
     start_url: '/',
@@ -30,7 +30,7 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     shortcuts: [
       {
-        name: 'Open PlanAI by BoldMind',
+        name: 'Open PlanAI by BoldmindNG',
         url: '/',
         icons: [{ src: '/icons/pwa/icon-192x192.png', sizes: '192x192' }],
       },

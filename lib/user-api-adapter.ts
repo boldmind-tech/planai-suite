@@ -1,6 +1,6 @@
 
 
-import { boldMindAPI } from '@boldmind-tech/api-client';
+import { boldMindAPI } from '@boldmindng/api-client';
 
 export const userAPIAdapter = {
   async getMe() {

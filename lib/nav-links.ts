@@ -1,4 +1,4 @@
-import type { NavLink } from '@boldmind-tech/ui';
+import type { NavLink } from '@boldmindng/ui';
 
 export const SUITE_NAV_LINKS: NavLink[] = [
   { href: '/start', label: 'All Tools', icon: '✨' },

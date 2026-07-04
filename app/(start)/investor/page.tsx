@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { SuperNavbar, SuperFooter, Button } from "@boldmind-tech/ui";
+import { SuperNavbar, SuperFooter, Button } from "@boldmindng/ui";
 import { TOOL_NAV_LINKS } from "@/lib/nav-links";
 import {
   ArrowRight,

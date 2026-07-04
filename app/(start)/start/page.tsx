@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Star, MessageSquare, X, Play } from 'lucide-react';
-import { SuperNavbar, SuperFooter } from '@boldmind-tech/ui';
+import { SuperNavbar, SuperFooter } from '@boldmindng/ui';
 import { TOOL_NAV_LINKS } from '@/lib/nav-links';
 import { SUITE_PRODUCTS } from '@/lib/suite-products';
 import { PRICING_TIERS } from '@/lib/suite-products';

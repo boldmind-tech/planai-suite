@@ -11,7 +11,7 @@ import {
   CardContent,
   ParticleBackground,
   TypewriterEffect,
-} from "@boldmind-tech/ui";
+} from "@boldmindng/ui";
 import {
   ShoppingBag,
   Smartphone,

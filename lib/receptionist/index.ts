@@ -1,4 +1,4 @@
-import { boldMindAPI, type ReceptionistConfig, type Conversation, type KnowledgeBase } from '@boldmind-tech/api-client';
+import { boldMindAPI, type ReceptionistConfig, type Conversation, type KnowledgeBase } from '@boldmindng/api-client';
 
 /**
  * Receptionist API Client

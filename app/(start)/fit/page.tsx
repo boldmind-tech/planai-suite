@@ -1,6 +1,6 @@
 'use client';
 
-import { SuperNavbar, SuperFooter } from '@boldmind-tech/ui';
+import { SuperNavbar, SuperFooter } from '@boldmindng/ui';
 import { motion } from 'framer-motion';
 import {
   Activity, Apple, Users, ArrowRight, CheckCircle2, Zap, Scale, Flame,

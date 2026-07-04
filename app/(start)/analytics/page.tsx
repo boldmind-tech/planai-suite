@@ -1,7 +1,7 @@
 'use client';
 
 import { SUITE_NAV_LINKS } from '@/lib/nav-links';
-import { SuperNavbar, SuperFooter } from '@boldmind-tech/ui';
+import { SuperNavbar, SuperFooter } from '@boldmindng/ui';
 import { motion } from 'framer-motion';
 import {
   BarChart, Activity, TrendingUp, Zap, ArrowRight, CheckCircle2

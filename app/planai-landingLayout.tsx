@@ -1,11 +1,11 @@
 'use client';
 import { ReactNode } from 'react';
-import { ThemeProvider, FontProvider } from '@boldmind-tech/ui';
-import type { ProductThemeType } from '@boldmind-tech/ui';
+import { ThemeProvider, FontProvider } from '@boldmindng/ui';
+import type { ProductThemeType } from '@boldmindng/ui';
 
 const PLANAI_THEME: ProductThemeType = {
   slug: 'planai',
-  name: 'PlanAI By BoldMind',
+  name: 'PlanAI By BoldmindNG',
   description: 'AI business automation for Nigerian entrepreneurs',
   icon: '🤖',
   status: 'LIVE',

@@ -1,6 +1,6 @@
 'use client';
 
-import { ThemeProvider, type ProductThemeType } from '@boldmind-tech/ui';
+import { ThemeProvider, type ProductThemeType } from '@boldmindng/ui';
 
 interface ProvidersProps {
   children: React.ReactNode;

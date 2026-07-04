@@ -1,5 +1,5 @@
 // APPS/WEB_APPS/planai/lib/api.ts
-import { boldMindAPI, type BusinessPlan, type FinancialForecast, type BrandingJob, type FitnessProfile, type WorkoutPlan, type MealLog, type BodyMetric, type FitnessDashboard } from '@boldmind-tech/api-client';
+import { boldMindAPI, type BusinessPlan, type FinancialForecast, type BrandingJob, type FitnessProfile, type WorkoutPlan, type MealLog, type BodyMetric, type FitnessDashboard } from '@boldmindng/api-client';
 
 export const planaiAPI = {
     /**
