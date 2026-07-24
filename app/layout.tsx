@@ -1,8 +1,8 @@
-import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
-import { PlanaiLandingLayout } from './planai-landingLayout'
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+import { PlanaiLandingLayout } from "./planai-landingLayout";
 import { ErrorBoundary, CookieConsent } from "@boldmindng/ui";
-import './globals.css'
+import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,69 +12,72 @@ const inter = Inter({
 });
 
 const getCanonicalUrl = () => {
-  const baseUrl = process.env['NEXT_PUBLIC_APP_URL'] || "https://planai.boldmind.ng";
+  const baseUrl =
+    process.env["NEXT_PUBLIC_APP_URL"] || "https://planai.boldmind.ng";
   return baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
 };
 
 const canonicalUrl = getCanonicalUrl();
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://planai.boldmind.ng'),
+  metadataBase: new URL("https://planai.boldmind.ng"),
   title: {
-    default: 'PlanAI by BoldMind',
+    default: "PlanAI by BoldMind",
     template: `%s | PlanAI by BoldMind`,
   },
-  description: 'AI business tools for Nigerian entrepreneurs',
-  applicationName: 'PlanAI by BoldMind',
-  keywords: ['Nigeria', 'planai', 'Boldmind', 'Nigerian entrepreneur'],
-  authors: [{ name: 'Boldmind Technology Solution Enterprise', url: 'https://boldmind.ng' }],
-  creator: 'Boldmind Technology Solution Enterprise',
-  publisher: 'Boldmind Technology Solution Enterprise',
-  
+  description: "AI business tools for Nigerian entrepreneurs",
+  applicationName: "PlanAI by BoldMind",
+  keywords: ["Nigeria", "planai", "Boldmind", "Nigerian entrepreneur"],
+  authors: [
+    {
+      name: "Boldmind Technology Solution Enterprise",
+      url: "https://boldmind.ng",
+    },
+  ],
+  creator: "Boldmind Technology Solution Enterprise",
+  publisher: "Boldmind Technology Solution Enterprise",
+
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icons/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: "/favicon.ico" },
+      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
     apple: [
-      { url: '/apple-touch-icon.png' },
-      { url: '/icons/apple/apple-touch-icon-152x152.png', sizes: '152x152' },
-      { url: '/icons/apple/apple-touch-icon-167x167.png', sizes: '167x167' },
-      { url: '/icons/apple/apple-touch-icon-180x180.png', sizes: '180x180' },
+      { url: "/apple-touch-icon.png" },
+      { url: "/icons/apple/apple-touch-icon-152x152.png", sizes: "152x152" },
+      { url: "/icons/apple/apple-touch-icon-167x167.png", sizes: "167x167" },
+      { url: "/icons/apple/apple-touch-icon-180x180.png", sizes: "180x180" },
     ],
-    other: [
-      { rel: 'mask-icon', url: '/icons/favicon-96x96.png' },
-    ],
+    other: [{ rel: "mask-icon", url: "/icons/favicon-96x96.png" }],
   },
 
   openGraph: {
-    type: 'website',
-    url: 'https://planai.boldmind.ng',
-    siteName: 'PlanAI by BoldMind',
-    title: 'PlanAI by BoldMind',
-    description: 'AI business tools for Nigerian entrepreneurs',
-    locale: 'en_NG',
+    type: "website",
+    url: "https://planai.boldmind.ng",
+    siteName: "PlanAI by BoldmindNG",
+    title: "PlanAI by BoldmindNG",
+    description: "AI business tools for Nigerian entrepreneurs",
+    locale: "en_NG",
     images: [
       {
-        url: '/social/og-image.jpg',
+        url: "/social/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: 'PlanAI by BoldMind',
+        alt: "PlanAI by BoldmindNG — AI business tools for Nigerian entrepreneurs",
       },
     ],
   },
 
   twitter: {
-    card: 'summary_large_image',
-    site: '@planaibyboldmin',
-    creator: '@boldmindindng',
-    title: 'PlanAI by BoldmindNG',
-    description: 'AI business tools for Nigerian entrepreneurs',
-    images: ['/social/twitter-card.jpg'],
+    card: "summary_large_image",
+    site: "@planaibyboldmin",
+    creator: "@boldmindindng",
+    title: "PlanAI by BoldmindNG",
+    description: "AI business tools for Nigerian entrepreneurs",
+    images: ["/social/twitter-card.jpg"],
   },
-
 };
 
 export const viewport: Viewport = {
@@ -104,8 +107,13 @@ const organizationSchema = {
       "@type": "Person",
       name: "Charles Uche Chijuka",
       sameAs: [
-        "https://linkedin.com/in/charleschijukau",
-        "https://x.com/charleschijukau",
+        "https://linkedin.com/in/charlesuchijuka",
+        "https://x.com/charlesuchijuk",
+        "https://web.facebook.com/charlesuchijuka",
+        "https://www.instagram.com/charlesuchijuka",
+        "https://medium.com/@charlesuchijuka",
+        "https://substack.com/@charlesuchijuka",
+        "https://www.youtube.com/@charlesuchijuka",
       ],
     },
   ],
@@ -120,7 +128,7 @@ const organizationSchema = {
     "@type": "ContactPoint",
     contactType: "customer service",
     email: "hello@boldmind.ng",
-    telephone: "+2349138349271",
+    telephone: "+2349016777346",
     availableLanguage: ["English"],
   },
   sameAs: [
@@ -154,9 +162,10 @@ const productEcosystemSchema = {
       position: 1,
       item: {
         "@type": "Product",
-        name: "AI Receptionist",
-        description: "24/7 AI-powered customer service receptionist for your business",
-        url: `${canonicalUrl}/receptionist`,
+        name: "Social Media Manager",
+        description:
+          "All-in-one social media management for Nigerian businesses — AI-powered content creation, multi-platform scheduling, DM & comment automation across Instagram, WhatsApp, Facebook, and TikTok, plus analytics. One tool to create, publish, respond, and grow.",
+        url: `${canonicalUrl}/social`,
       },
     },
     {
@@ -164,9 +173,10 @@ const productEcosystemSchema = {
       position: 2,
       item: {
         "@type": "Product",
-        name: "Digital Storefront",
-        description: "Build and manage your digital storefront with AI assistance",
-        url: `${canonicalUrl}/store`,
+        name: "Ads Center",
+        description:
+          "Done-for-you and self-serve advertising management for Nigerian businesses — run Meta (Facebook/Instagram), Google, and TikTok ads from one dashboard. AI-generated creatives, audience targeting, budget optimization, and real-time performance tracking calibrated for the Nigerian market.",
+        url: `${canonicalUrl}/ads`,
       },
     },
     {
@@ -184,9 +194,10 @@ const productEcosystemSchema = {
       position: 4,
       item: {
         "@type": "Product",
-        name: "Financial Planning",
-        description: "AI-assisted financial planning and business forecasting",
-        url: `${canonicalUrl}/finance`,
+        name: "Business Intelligence Suite",
+        description:
+          "AI-powered business planning, financial forecasting, and cross-platform analytics in one product — generate bank-ready business plans, model your next 12 months of cashflow, and unify your Instagram, TikTok, Paystack, and website data into one Nigerian entrepreneur-friendly dashboard.",
+        url: `${canonicalUrl}/intelligence`,
       },
     },
     {
@@ -194,9 +205,10 @@ const productEcosystemSchema = {
       position: 5,
       item: {
         "@type": "Product",
-        name: "Investor Readiness",
-        description: "Prepare your business for investor presentations and funding rounds",
-        url: `${canonicalUrl}/investor-readiness`,
+        name: "Investor Readiness Suite",
+        description:
+          "Prepare your business for investor presentations and funding rounds",
+        url: `${canonicalUrl}/investor`,
       },
     },
     {
@@ -204,9 +216,10 @@ const productEcosystemSchema = {
       position: 6,
       item: {
         "@type": "Product",
-        name: "Branding & Design",
-        description: "AI-powered branding and visual identity for your business",
-        url: `${canonicalUrl}/branding`,
+        name: "Brand & Digital Home",
+        description:
+          "Everything a Nigerian business needs to look professional online — AI logo and brand kit generation, professional portfolio/website builder, and digital storefront with Paystack payments. From brand identity to live online store in one product.",
+        url: `${canonicalUrl}/brand`,
       },
     },
     {
@@ -214,9 +227,10 @@ const productEcosystemSchema = {
       position: 7,
       item: {
         "@type": "Product",
-        name: "Analytics Dashboard",
-        description: "Comprehensive business analytics and performance insights",
-        url: `${canonicalUrl}/analytics`,
+        name: "Business Discovery Directory",
+        description:
+          "Nigeria's most comprehensive business discovery platform — find verified businesses, suppliers, and professionals by category, location, and niche. Includes B2B email and contact discovery, LinkedIn enrichment, and direct outreach tools.",
+        url: `${canonicalUrl}/directory`,
       },
     },
     {
@@ -224,9 +238,10 @@ const productEcosystemSchema = {
       position: 8,
       item: {
         "@type": "Product",
-        name: "Credibility Hub",
-        description: "Build business credibility and trust signals with customers",
-        url: `${canonicalUrl}/credibility`,
+        name: "AI Business Agent",
+        description:
+          "Build business credibility and trust signals with customers",
+        url: `${canonicalUrl}/agent`,
       },
     },
     {
@@ -234,9 +249,9 @@ const productEcosystemSchema = {
       position: 9,
       item: {
         "@type": "Product",
-        name: "Business Planning",
+        name: "HR & Payroll",
         description: "AI-assisted business plan creation and growth strategy",
-        url: `${canonicalUrl}/planning`,
+        url: `${canonicalUrl}/hr`,
       },
     },
     {
@@ -244,9 +259,10 @@ const productEcosystemSchema = {
       position: 10,
       item: {
         "@type": "Product",
-        name: "Naija Fit",
-        description: "Nigerian fitness platform with meal database, workout plans, and AI wellness coach",
-        url: `${canonicalUrl}/fit`,
+        name: "Boldmind Fitness Center",
+        description:
+          "Nigerian fitness platform with meal database, workout plans, and AI wellness coach",
+        url: `${canonicalUrl}/fitness`,
       },
     },
     {
@@ -254,9 +270,32 @@ const productEcosystemSchema = {
       position: 11,
       item: {
         "@type": "Product",
-        name: " ViralKit",
-        description: "AI-powered social media content creation and growth tools for Nigerian businesses",
-        url: `${canonicalUrl}/viralkit`,
+        name: "Boldmind Marketplace",
+        description:
+          "AI-powered social media content creation and growth tools for Nigerian businesses",
+        url: `${canonicalUrl}/marketplace`,
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 12,
+      item: {
+        "@type": "Product",
+        name: "Project Manager",
+        description:
+          "AI-powered social media content creation and growth tools for Nigerian businesses",
+        url: `${canonicalUrl}/projects`,
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 13,
+      item: {
+        "@type": "Product",
+        name: "CRM & Client Management",
+        description:
+          "AI-powered social media content creation and growth tools for Nigerian businesses",
+        url: `${canonicalUrl}/crm`,
       },
     },
   ],
@@ -265,7 +304,7 @@ const productEcosystemSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "PlanAI by BoldmindNg",
+  name: "PlanAI by BoldmindNG",
   url: canonicalUrl,
   inLanguage: "en-NG",
   potentialAction: {
@@ -275,12 +314,20 @@ const websiteSchema = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en-NG" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link rel="preconnect" href="https://cdn.boldmind.ng" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -288,78 +335,170 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="//api.boldmind.ng" />
         <meta name="mobile-web-app-capable" content="yes" />
 
-
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
         <meta name="application-name" content="PlanAI by BoldmindNG" />
-        <meta name="description" content="AI business tools for Nigerian entrepreneurs" />
+        <meta
+          name="description"
+          content="AI business tools for Nigerian entrepreneurs"
+        />
         <meta name="theme-color" content="#5B21B6" />
         <meta name="msapplication-TileColor" content="#5B21B6" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/icons/favicon-16x16.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/icons/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/icons/favicon-96x96.png"
+        />
 
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple/apple-touch-icon-57x57.png" />
-        <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple/apple-touch-icon-60x60.png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple/apple-touch-icon-76x76.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple/apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple/apple-touch-icon-120x120.png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple/apple-touch-icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="167x167" href="/icons/apple/apple-touch-icon-167x167.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple/apple-touch-icon-180x180.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="57x57"
+          href="/icons/apple/apple-touch-icon-57x57.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="60x60"
+          href="/icons/apple/apple-touch-icon-60x60.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="72x72"
+          href="/icons/apple/apple-touch-icon-72x72.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="76x76"
+          href="/icons/apple/apple-touch-icon-76x76.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="114x114"
+          href="/icons/apple/apple-touch-icon-114x114.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="120x120"
+          href="/icons/apple/apple-touch-icon-120x120.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/icons/apple/apple-touch-icon-144x144.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/icons/apple/apple-touch-icon-152x152.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="167x167"
+          href="/icons/apple/apple-touch-icon-167x167.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/icons/apple/apple-touch-icon-180x180.png"
+        />
 
         <link rel="manifest" href="/manifest.webmanifest" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://planai.boldmind.ng" />
         <meta property="og:site_name" content="PlanAI by BoldmindNG" />
-        <meta property="og:title" content="PlanAI by Boldmind" />
-        <meta property="og:description" content="AI business tools for Nigerian entrepreneurs" />
-        <meta property="og:image" content="https://planai.boldmind.ng/social/og-image.jpg" />
+        <meta property="og:title" content="PlanAI by BoldmindNG" />
+        <meta
+          property="og:description"
+          content="AI business tools for Nigerian entrepreneurs"
+        />
+        <meta
+          property="og:image"
+          content="https://planai.boldmind.ng/social/og-image.jpg"
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="PlanAI by BoldmindNG — AI business tools for Nigerian entrepreneurs" />
+        <meta
+          property="og:image:alt"
+          content="PlanAI by BoldmindNG — AI business tools for Nigerian entrepreneurs"
+        />
         <meta property="og:locale" content="en_NG" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@planaibyboldmin" />
         <meta name="twitter:creator" content="@boldmindng" />
         <meta name="twitter:title" content="PlanAI by BoldmindNG" />
-        <meta name="twitter:description" content="AI business tools for Nigerian entrepreneurs" />
-        <meta name="twitter:image" content="https://planai.boldmind.ng/social/twitter-card.jpg" />
+        <meta
+          name="twitter:description"
+          content="AI business tools for Nigerian entrepreneurs"
+        />
+        <meta
+          name="twitter:image"
+          content="https://planai.boldmind.ng/social/twitter-card.jpg"
+        />
 
-
-        <meta name="msapplication-square70x70logo" content="/icons/windows/mstile-70x70.png" />
-        <meta name="msapplication-square150x150logo" content="/icons/windows/mstile-150x150.png" />
-        <meta name="msapplication-wide310x150logo" content="/icons/windows/mstile-310x150.png" />
-        <meta name="msapplication-square310x310logo" content="/icons/windows/mstile-310x310.png" />
+        <meta
+          name="msapplication-square70x70logo"
+          content="/icons/windows/mstile-70x70.png"
+        />
+        <meta
+          name="msapplication-square150x150logo"
+          content="/icons/windows/mstile-150x150.png"
+        />
+        <meta
+          name="msapplication-wide310x150logo"
+          content="/icons/windows/mstile-310x150.png"
+        />
+        <meta
+          name="msapplication-square310x310logo"
+          content="/icons/windows/mstile-310x310.png"
+        />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <meta name="geo.region" content="NG-LA" />
         <meta name="geo.placename" content="Lagos, Nigeria" />
         <meta name="geo.position" content="6.5244;3.3792" />
         <meta name="ICBM" content="6.5244, 3.3792" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productEcosystemSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(productEcosystemSchema),
+          }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body className={`${inter.variable} antialiased bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 font-sans`}>
+      <body
+        className={`${inter.variable} antialiased bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 font-sans`}
+      >
         <ErrorBoundary>
           <PlanaiLandingLayout>{children}</PlanaiLandingLayout>
           <CookieConsent />
