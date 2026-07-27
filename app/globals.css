@@ -1,6 +1,15 @@
+@import "tailwindcss";
 @import "https://fonts.cdnfonts.com/css/opendyslexic";
 @import "https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap";
+
+/* v4: automatic source detection doesn't reliably follow pnpm's
+   symlinked workspace packages — the same gotcha found and fixed in
+   boldmind-web. Without this, any utility used only inside @boldmindng/ui
+   (SuperNavbar's `md:` breakpoint, ThemeToggle's `sr-only`) would never
+   generate here either. */
+@source "../node_modules/@boldmindng/ui";
+@source "../node_modules/@boldmindng/auth";
 
 :root,
 [data-font="dyslexic"],
@@ -69,10 +78,6 @@ p {
   }
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --neutral-50: #fafaf9;
   --neutral-100: #f5f5f4;
@@ -106,7 +111,11 @@ p {
   --product-highlight: rgba(5, 150, 105, 0.12);
   --product-glow: rgba(5, 150, 105, 0.25);
   --font-primary: "OpenDyslexic", "Comic Sans MS", "Arial", sans-serif;
-  --font-active: "OpenDyslexic", "Comic Sans MS", "Arial", sans-serif;
+  /* --font-active is deliberately NOT redeclared here — see the font-modes
+     block near the top of this file. This :root ties in specificity with
+     [data-font=standard] (0,1,0 each); redeclaring here would win that tie
+     on source order alone and pin the whole app to OpenDyslexic regardless
+     of the toggle, the same bug found in boldmind-web's globals.css. */
   --font-serif: "Lora", Georgia, serif;
   --font-mono: "JetBrains Mono", "Courier New", monospace;
   --space-xs: 0.5rem;

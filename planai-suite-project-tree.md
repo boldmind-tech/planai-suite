@@ -1,85 +1,79 @@
-
 ```
 planai-suite
 ├─ .npmrc
+├─ README.md
 ├─ app
 │  ├─ (start)
-│  │  ├─ analytics
+│  │  ├─ ads
 │  │  │  └─ page.tsx
-│  │  ├─ branding
+│  │  ├─ agent
+│  │  ├─ brand
 │  │  │  └─ page.tsx
-│  │  ├─ credibility
-│  │  │  └─ page.tsx
+│  │  ├─ crm
 │  │  ├─ dashboard
 │  │  │  └─ page.tsx
-│  │  ├─ emailscraper
+│  │  ├─ directory
 │  │  │  └─ page.tsx
-│  │  ├─ finance
+│  │  ├─ fitness
 │  │  │  └─ page.tsx
-│  │  ├─ fit
-│  │  │  └─ page.tsx
+│  │  ├─ hr
+│  │  ├─ intelligence
 │  │  ├─ investor
 │  │  │  └─ page.tsx
 │  │  ├─ marketing
 │  │  │  └─ page.tsx
-│  │  ├─ planning
+│  │  ├─ marketplace
 │  │  │  └─ page.tsx
-│  │  ├─ receptionist
+│  │  ├─ projects
+│  │  ├─ social
 │  │  │  ├─ (dashboard)
 │  │  │  │  └─ dashboard
 │  │  │  │     └─ page.tsx
 │  │  │  └─ page.tsx
-│  │  ├─ start
-│  │  │  └─ page.tsx
-│  │  ├─ store
-│  │  │  └─ page.tsx
-│  │  └─ viralkit
+│  │  └─ start
 │  │     └─ page.tsx
 │  ├─ globals.css
 │  ├─ manifest.ts
 │  ├─ page.tsx
 │  └─ pricing
 │     └─ page.tsx
-├─ boldmind-system-design-v2-alignment-addendum.md
 ├─ components
-│  ├─ analytics
+│  ├─ Providers.tsx
+│  ├─ ads
 │  │  └─ Providers.tsx
-│  ├─ branding
+│  ├─ agent
+│  ├─ brand
 │  │  └─ Providers.tsx
-│  ├─ credibility
+│  ├─ crm
+│  ├─ directory
 │  │  └─ Providers.tsx
-│  ├─ finance
+│  ├─ fitness
+│  ├─ hr
+│  ├─ intelligence
 │  │  └─ Providers.tsx
 │  ├─ investor
 │  │  └─ Providers.tsx
 │  ├─ marketing
 │  │  └─ Providers.tsx
-│  ├─ planning
+│  ├─ marketplace
 │  │  └─ Providers.tsx
-│  ├─ Providers.tsx
-│  ├─ receptionist
-│  │  ├─ ChatInterface.tsx
-│  │  ├─ LeadCard.tsx
+│  ├─ projects
 │  │  └─ Providers.tsx
-│  └─ store
+│  └─ social
+│     ├─ ChatInterface.tsx
+│     ├─ LeadCard.tsx
 │     └─ Providers.tsx
 ├─ global.d.ts
 ├─ lib
 │  ├─ api.ts
 │  ├─ nav-links.ts
-│  ├─ receptionist
-│  │  └─ index.ts
-│  ├─ store
-│  │  └─ index.ts
-│  ├─ suite-products.ts
-│  ├─ user-api-adapter.ts
 │  └─ verified-businesses.ts
-├─ middleware.ts
 ├─ next-env.d.ts
 ├─ next.config.mjs
 ├─ package.json
 ├─ planai-suite-project-tree.md
 ├─ postcss.config.js
+├─ proxy.ts
 ├─ public
 │  ├─ apple-touch-icon.png
 │  ├─ browserconfig.xml

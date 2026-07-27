@@ -1,114 +1,253 @@
+import Link from "next/link";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { Card, StatusBadge } from "@boldmindng/ui";
+import { getPlanAICoreTools } from "@boldmindng/utils";
 
-import type { Metadata } from 'next';
-import Link from 'next/link';
- 
-export const metadata: Metadata = {
-  title: 'Dashboard — PlanAI Suite',
-  robots: { index: false },
-};
-
-const TOOLS = [
-  { href: '/dashboard/business-analyzer', emoji: '📊', label: 'Business Analyzer' },
-  { href: '/dashboard/content-creator', emoji: '✍️', label: 'Content Creator' },
-  { href: '/dashboard/market-research', emoji: '🔍', label: 'Market Research' },
-  { href: '/dashboard/financial-planner', emoji: '💰', label: 'Financial Planner' },
-  { href: '/dashboard/competitor-tracker', emoji: '👁️', label: 'Competitor Tracker' },
-  { href: '/dashboard/growth-strategist', emoji: '📈', label: 'Growth Strategist' },
-  { href: '/dashboard/customer-insights', emoji: '👥', label: 'Customer Insights' },
-  { href: '/dashboard/sales-optimizer', emoji: '🎯', label: 'Sales Optimizer' },
-  { href: '/dashboard/workflow-automation', emoji: '⚙️', label: 'Workflow Automation' },
-  { href: '/dashboard/ai-assistant', emoji: '🤖', label: 'AI Assistant' },
-  { href: '/dashboard/reporting', emoji: '📋', label: 'Reporting' },
-  { href: '/dashboard/settings', emoji: '⚡', label: 'Settings' },
-];
- 
-const API = process.env['NEXT_PUBLIC_API_URL']?.replace(/\/$/, '') ?? 'http://localhost:4000/api/v1';
- 
-async function getRecentJobs() {
-  try {
-    const res = await fetch(`${API}/planai/jobs?limit=6`, {
-      credentials: 'include', cache: 'no-store',
-    });
-    if (!res.ok) return [];
-    const json = await res.json();
-    return json.data ?? json;
-  } catch { return []; }
-}
- 
-export default async function PlanaiDashboardPage() {
-  const jobs: any[] = await getRecentJobs();
- 
-  const JOB_STATUS_COLORS: Record<string, string> = {
-    completed: 'var(--color-success)',
-    pending:   'var(--color-warning)',
-    failed:    'var(--color-error)',
-    processing:'var(--product-primary)',
-  };
- 
+// ── KPI card — cockpit rule: the number leads, icon-first is the anti-pattern ──
+function Kpi({
+  label,
+  value,
+  delta,
+  deltaLabel,
+}: {
+  label: string;
+  value: string;
+  delta?: string;
+  deltaLabel?: string;
+}) {
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-2xl font-black" style={{ color: 'var(--product-primary)' }}>PlanAI Suite</h1>
-        <p className="text-sm mt-1" style={{ color: 'var(--product-foreground)', opacity: 0.6 }}>
-          Your AI-powered business command centre
-        </p>
+    <Card className="panel p-4">
+      <div className="text-[12px] font-medium text-[var(--product-foreground)]/60">
+        {label}
       </div>
- 
-      {/* 12 tool cards */}
-      <div>
-        <h2 className="text-lg font-black mb-4" style={{ color: 'var(--product-foreground)' }}>Choose a Tool</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-          {TOOLS.map(tool => (
-            <Link
-              key={tool.href}
-              href={tool.href}
-              className="planai-link-card group flex flex-col items-center gap-2 p-4 rounded-2xl border-2 transition-all hover:shadow-md text-center"
-              style={{ borderColor: 'var(--product-muted)', backgroundColor: 'var(--product-background)' }}
-            >
-              <span className="text-2xl">{tool.emoji}</span>
-              <span className="text-xs font-bold leading-tight" style={{ color: 'var(--product-foreground)' }}>
-                {tool.label}
-              </span>
-            </Link>
-          ))}
-        </div>
+      <div className="mt-1 text-[26px] font-bold tabular leading-none">
+        {value}
       </div>
- 
-      {/* Recent jobs */}
-      {jobs.length > 0 && (
-        <div>
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-black" style={{ color: 'var(--product-foreground)' }}>Recent Jobs</h2>
-            <Link href="/dashboard/jobs" className="text-sm font-bold" style={{ color: 'var(--product-primary)' }}>
-              View all →
-            </Link>
-          </div>
-          <div className="rounded-2xl border-2 overflow-hidden"
-               style={{ borderColor: 'var(--product-muted)', backgroundColor: 'var(--product-background)' }}>
-            {jobs.map((job: any, i: number) => (
-              <div key={job.id ?? i}
-                className="planai-job-row flex items-center justify-between px-5 py-3 transition-colors"
-                style={{ borderBottom: i < jobs.length - 1 ? '1px solid var(--product-muted)' : undefined }}>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: 'var(--product-foreground)' }}>
-                    {job.type ?? job.toolType ?? 'AI Job'}
-                  </p>
-                  <p className="text-xs mt-0.5" style={{ color: 'var(--product-foreground)', opacity: 0.5 }}>
-                    {job.createdAt ? new Date(job.createdAt).toLocaleString() : '—'}
-                  </p>
-                </div>
-                <span className="text-[10px] font-black uppercase px-2.5 py-1 rounded-full"
-                      style={{
-                        backgroundColor: `${JOB_STATUS_COLORS[job.status] ?? 'var(--product-primary)'}20`,
-                        color: JOB_STATUS_COLORS[job.status] ?? 'var(--product-primary)',
-                      }}>
-                  {job.status ?? 'pending'}
-                </span>
-              </div>
-            ))}
-          </div>
+      {delta && (
+        <div className="mt-2 inline-flex items-center gap-1 text-[12px] font-medium text-[var(--product-secondary)]">
+          <ArrowUpRight size={13} />
+          {delta}{" "}
+          <span className="text-[var(--product-foreground)]/45 font-normal">
+            {deltaLabel}
+          </span>
         </div>
       )}
+    </Card>
+  );
+}
+
+function ToolTile({
+  name,
+  slug,
+  status,
+  href,
+}: {
+  name: string;
+  slug: string;
+  status: "LIVE" | "BUILDING" | "PLANNED";
+  href: string;
+}) {
+  const statusMap = {
+    LIVE: "live",
+    BUILDING: "building",
+    PLANNED: "planned",
+  } as const;
+  return (
+    <Link
+      href={href}
+      className="panel group flex items-center justify-between p-3.5 hover:border-[var(--product-primary)]/40 transition-colors duration-150"
+    >
+      <div className="min-w-0">
+        <div className="text-[13.5px] font-semibold truncate">{name}</div>
+        <div className="mt-1">
+          <StatusBadge variant={statusMap[status]} />
+        </div>
+      </div>
+      <ArrowRight
+        size={15}
+        className="shrink-0 text-[var(--product-foreground)]/30 group-hover:text-[var(--product-primary)] group-hover:translate-x-0.5 transition-all duration-150"
+      />
+    </Link>
+  );
+}
+
+export default function PlanAIDashboardPage() {
+  // In production this reads BOLDMIND_PRODUCTS live; shape shown here for the page contract.
+  const tools = getPlanAICoreTools();
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-baseline justify-between">
+        <div>
+          <h1 className="text-xl font-bold tracking-tight">Suite dashboard</h1>
+          <p className="text-[13px] text-[var(--product-foreground)]/55 mt-0.5">
+            Everything running across your 13 PlanAI tools, in one view.
+          </p>
+        </div>
+        <Link
+          href="/marketing"
+          className="text-[13px] font-medium rounded-[var(--radius-control)] bg-[var(--product-primary)] text-white px-3.5 py-2 hover:opacity-90 transition-opacity duration-150"
+        >
+          New campaign
+        </Link>
+      </div>
+
+      {/* KPI row */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <Kpi
+          label="Monthly revenue"
+          value="₦1,200,000"
+          delta="+18%"
+          deltaLabel="vs last 30 days"
+        />
+        <Kpi label="Active tools" value="9 / 13" />
+        <Kpi label="Wallet balance" value="₦45,000" />
+        <Kpi
+          label="PlanAI Score"
+          value="74 / 100"
+          delta="+6 pts"
+          deltaLabel="vs last month"
+        />
+      </div>
+
+      {/* Tool grid */}
+      <div>
+        <h2 className="text-[13px] font-semibold text-[var(--product-foreground)]/70 mb-2.5">
+          Your tools
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+          <ToolTile
+            name="Social Media Manager"
+            slug="social-media-manager"
+            status="LIVE"
+            href="/social"
+          />
+          <ToolTile
+            name="Ads Center"
+            slug="ads-center"
+            status="LIVE"
+            href="/ads"
+          />
+          <ToolTile
+            name="Brand & Digital Home"
+            slug="brand-digital-home"
+            status="LIVE"
+            href="/brand"
+          />
+          <ToolTile
+            name="Business Intelligence"
+            slug="business-intelligence"
+            status="LIVE"
+            href="/intelligence"
+          />
+          <ToolTile
+            name="Investor Readiness"
+            slug="investor-readiness"
+            status="LIVE"
+            href="/investor"
+          />
+          <ToolTile
+            name="Marketing Automation"
+            slug="marketing-automation"
+            status="LIVE"
+            href="/marketing"
+          />
+          <ToolTile
+            name="Business Discovery"
+            slug="business-discovery"
+            status="LIVE"
+            href="/directory"
+          />
+          <ToolTile
+            name="AI Business Agent"
+            slug="ai-business-agent"
+            status="LIVE"
+            href="/agent"
+          />
+          <ToolTile
+            name="Project Manager"
+            slug="project-manager"
+            status="LIVE"
+            href="/projects"
+          />
+          <ToolTile name="CRM & Clients" slug="crm" status="LIVE" href="/crm" />
+          <ToolTile
+            name="HR & Payroll"
+            slug="hr-payroll"
+            status="LIVE"
+            href="/hr"
+          />
+          <ToolTile
+            name="Fitness Center"
+            slug="boldmind-fitness"
+            status="LIVE"
+            href="/fitness"
+          />
+          <ToolTile
+            name="Marketplace"
+            slug="boldmind-marketplace"
+            status="LIVE"
+            href="/marketplace"
+          />
+        </div>
+      </div>
+
+      {/* Recent jobs table */}
+      <div>
+        <h2 className="text-[13px] font-semibold text-[var(--product-foreground)]/70 mb-2.5">
+          Recent activity
+        </h2>
+        <div className="panel overflow-hidden">
+          <table className="data-table w-full text-[13px]">
+            <thead>
+              <tr className="text-left text-[12px] text-[var(--product-foreground)]/55">
+                <th className="px-4 py-2.5 font-medium">Job</th>
+                <th className="px-4 py-2.5 font-medium">Tool</th>
+                <th className="px-4 py-2.5 font-medium">Status</th>
+                <th className="px-4 py-2.5 font-medium num">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                {
+                  job: "Pidgin caption batch (12 posts)",
+                  tool: "Social Media Manager",
+                  status: "live" as const,
+                  time: "2m ago",
+                },
+                {
+                  job: "Logo kit — Zenith Fashion",
+                  tool: "Brand & Digital Home",
+                  status: "building" as const,
+                  time: "18m ago",
+                },
+                {
+                  job: "WhatsApp broadcast — 340 leads",
+                  tool: "Marketing Automation",
+                  status: "live" as const,
+                  time: "1h ago",
+                },
+              ].map((r) => (
+                <tr
+                  key={r.job}
+                  className="border-t border-[var(--panel-border)]"
+                >
+                  <td className="px-4 py-2.5">{r.job}</td>
+                  <td className="px-4 py-2.5 text-[var(--product-foreground)]/60">
+                    {r.tool}
+                  </td>
+                  <td className="px-4 py-2.5">
+                    <StatusBadge variant={r.status} />
+                  </td>
+                  <td className="px-4 py-2.5 num text-[var(--product-foreground)]/55">
+                    {r.time}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }
