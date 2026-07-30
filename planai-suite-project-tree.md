@@ -7,9 +7,11 @@ planai-suite
 │  │  ├─ ads
 │  │  │  └─ page.tsx
 │  │  ├─ agent
+│  │  │  └─ page.tsx
 │  │  ├─ brand
 │  │  │  └─ page.tsx
 │  │  ├─ crm
+│  │  │  └─ page.tsx
 │  │  ├─ dashboard
 │  │  │  └─ page.tsx
 │  │  ├─ directory
@@ -17,7 +19,9 @@ planai-suite
 │  │  ├─ fitness
 │  │  │  └─ page.tsx
 │  │  ├─ hr
+│  │  │  └─ page.tsx
 │  │  ├─ intelligence
+│  │  │  └─ page.tsx
 │  │  ├─ investor
 │  │  │  └─ page.tsx
 │  │  ├─ marketing
@@ -25,6 +29,7 @@ planai-suite
 │  │  ├─ marketplace
 │  │  │  └─ page.tsx
 │  │  ├─ projects
+│  │  │  └─ page.tsx
 │  │  ├─ social
 │  │  │  ├─ (dashboard)
 │  │  │  │  └─ dashboard
@@ -72,6 +77,7 @@ planai-suite
 ├─ next.config.mjs
 ├─ package.json
 ├─ planai-suite-project-tree.md
+├─ pnpm-lock.yaml
 ├─ postcss.config.js
 ├─ proxy.ts
 ├─ public
@@ -137,7 +143,7 @@ planai-suite
 │  │  └─ whatsapp-preview.jpg
 │  ├─ social-media-banner.png
 │  └─ sw.js
-├─ tailwind.config.js
+├─ tailwind.config.ts
 ├─ tsconfig.json
 └─ types
    └─ next-auth.d.ts

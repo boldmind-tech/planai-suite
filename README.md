@@ -144,7 +144,7 @@ planai-suite
 │  │  └─ whatsapp-preview.jpg
 │  ├─ social-media-banner.png
 │  └─ sw.js
-├─ tailwind.config.js
+├─ tailwind.config.ts
 ├─ tsconfig.json
 └─ types
    └─ next-auth.d.ts
