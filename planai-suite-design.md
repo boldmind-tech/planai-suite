@@ -148,3 +148,30 @@ Kanban → single-column stack with a column switcher on mobile, not horizontal 
 | P1       | Social sender-tag distinction                                    | `/social`     | 1d     | Frontend |
 | P2       | Fitness warmth pass                                              | `/fitness`    | 2d     | Frontend |
 | P2       | Mobile kanban/table collapse                                     | `/crm`, `/hr` | 2d     | Frontend |
+
+### Frontend Design Docs — Addendum v1
+
+**Applies to:** `boldmind-web`, `planai-suite`, `amebogist-web`, `villagecircle-web` design docs.
+**Not applied here:** `educenter-web` — see the full v2 rewrite (`educenter-web-design-doc-v2.md`), which got the larger LMS/School Portal priority update.
+
+**Purpose of this addendum:** two things came out of reconciling the individual app docs against `boldmind-service-canonical.md` v1.3 and `boldmind-shared-monorepo-v1.1.md`: (1) a couple of route/module references had drifted or were left as open flags, and (2) none of the four docs below had an explicit "room for future pages" convention the way `/study-hub/*` implicitly has one in educenter — this addendum adds that pattern to each app, plus flags anything newly confirmed or newly gapped by the v1.3 service doc.
+
+---
+
+---
+
+## planai-suite
+
+### Reconciliation against `boldmind-service-canonical.md` v1.3
+
+- **Flag carried forward, now with more detail:** the original doc's §5/§6 for `/social` (Social Media Manager) describes `GET /planai/social/analytics`, `GET /planai/social/conversations`, `POST /planai/social/schedule`, etc. as if fully specified. Canonical v1.3 §2.1 explicitly flags that **`SocialMediaController` and `AdsCenterController` have no confirmed per-endpoint live-routes table** — unlike Wallet or LMS, which do. Treat the endpoint names in this doc's §5 as a plausible shape, not a confirmed contract, until the live-routes snapshot is pulled for `/planai/social/*` and `/planai/ads/*` specifically.
+- Master Design v3.0 §27 (Social Media Management & Branding Architecture) implies `/social` and `/ads` will eventually be backed by workspace-level `BrandKit`/`SocialPost` models — per `boldmind-service-canonical.md` v1.3 §6, **no migration for these exists yet**. If `/social`'s UX work proceeds now, build it against the simpler existing `planai:social:generate`-scoped AI-caption endpoints (confirmed live), not against BrandKit/scheduling features that don't have a backing data model yet — don't let the frontend get ahead of a data model that isn't there.
+- The four tools missing a scoped `Providers.tsx` (`agent`, `crm`, `fitness`, `hr`, per the original UX audit) — no change, still open, unrelated to the above.
+
+### Extensibility — reserving room for future pages
+
+- Each of the 13 tools already gets its own top-level route (`/social`, `/ads`, etc.) — this is inherently extensible for a 14th tool, no structural change needed. The one discipline to hold: any new tool needs its own `Providers.tsx` from day one (the audit already flags 4 existing tools that skipped this — don't add a 14th without one).
+- Within `/social` specifically: once BrandKit lands (Master Design Wave 7), reserve `/social/brand-kit` (workspace branding settings) and `/social/calendar` (scheduling calendar view, distinct from the existing conversational `/social/dashboard`) as the next additions — don't fold brand-kit settings into `/social/dashboard` itself, since that page is already scoped to the unified inbox.
+- `/crm` and `/hr` are described in the UX audit as needing density passes; when adding new sub-views (e.g. a CRM deal detail side panel becoming its own route, an HR employee profile page), nest under the existing tool route (`/crm/deals/[id]`, `/hr/employees/[id]`) rather than creating new top-level tool-adjacent routes.
+
+---
